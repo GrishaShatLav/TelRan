@@ -18,7 +18,7 @@ class PointsSpaceTest {
 	Point[] expected0 = { p0, p2, p3, p4 };
 	Point[] expected4 = { p4, p3, p2, p0 };
 	Point[] expected01 = { p0, p1, p2, p3, p4 };
-	Point[] expected01_02 = { p0, p1, p_2, p2, p3, p4 };
+	Point[] expected01_02 = { p0, p1,p2,p_2, p3, p4 };
 
 	@Test
 	void testConstructor() {

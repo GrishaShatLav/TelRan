@@ -30,9 +30,26 @@ public class PointsSpace {
 	public Point[] getPoints() {
 		return points;
 	}
-	
+
 	public void addPoint(Point point) {
-		Arrays.sort(points,comp);
+		Comparator<Point> comp2 = (d1,d2) -> (int) ((d1.getX()-d2.getY())+(d1.getY()- d2.getY()));
+        if(Arrays.binarySearch(points,point,comp)<0){
+			Point[] newpoints = Arrays.copyOf(points,points.length+1);
+			newpoints[newpoints.length-1]=point;
+			points=newpoints;
+			Arrays.sort(points,comp);
+
+		}
+		else if (Arrays.binarySearch(points,point,comp2)<0){
+			Point[] newpoints = Arrays.copyOf(points,points.length+1);
+			newpoints[newpoints.length-1]=point;
+			points=newpoints;
+			Arrays.sort(points,comp);
+
+
+		}
+
+
 
 		//TODO keep sort of this.points
 		//to apply method binarySearch of the class Arrays
